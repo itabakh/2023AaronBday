@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ecf0f1;
+    margin: 0;
+}
+
+.card {
+    min-width: 300px;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    display: inline-block;
+}
+
+.front,
+.inside {
+    min-width: 300px;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.front {
+    background: #f39c12;
+    height: 200px; /* Fixed height for the front */
+}
+
+.inside {
+    background: #f1c40f;
+    transform: rotateY(-180deg);
+    height: auto; /* Autosize height for the inside */
+}
+
+.card.open {
+    transform: rotateY(180deg);
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
